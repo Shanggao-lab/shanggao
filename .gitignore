@@ -1,3 +1,4 @@
 # Ignore history and Git folders
 .history/
 .git/
+.DS_Store
