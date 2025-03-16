@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Gotham:wght@300;500&display=swap');
+        
+        body {
+            font-family: "Gotham", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            scroll-behavior: smooth;
+            color: #333;
+        }
+        
+        nav {
+            background: #f0f0f0;
+            color: #4898ad;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            z-index: 1000;
+        }
+        
+        .nav-left {
+            font-size: 22px;
+            font-weight: bold;
+            font-family: "Roboto Slab", serif;
+            color: #4898ad;
+        }
+        
+        .nav-right {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        .nav-right li {
+            display: inline;
+        }
+        
+        .nav-right li a {
+            color: #4898ad;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        .section {
+            padding: 120px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+        
+        h1, h2 {
+            font-family: 'Roboto Slab', serif;
+            color: #4898ad;
+        }
+        
+        #home .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding-top: 100px;
+            margin: 0 60px;
+        }
+        
+        .intro {
+            flex: 1;
+            max-width: 50%;
+            text-align: left;
+        }
+        
+        .profile {
+            flex: 1;
+            max-width: 40%;
+            text-align: center;
+        }
+        
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        
+        .contact {
+            margin-top: 10px;
+        }
+        
+        .contact a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 5px;
+            width: 140px;
+        }
+        
+        .github-btn {
+            background-color: #0078a6;
+        }
+        
+        .ssrn-btn {
+            background-color: #34becf;
+        }
+        
+        .contact a img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            #home .content {
+                flex-direction: column;
+                text-align: center;
+                margin: 0 30px;
+            }
+            .intro, .profile {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">Your Name</div>
+            <ul class="nav-right">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="section">
+        <div class="content">
+            <div class="intro">
+                <h1>Your Name</h1>
+                <p>Welcome to my homepage! I am a [Your Profession] specializing in [Your Field]. My research focuses on [Your Research Interests]. Feel free to explore my work on publications, teaching, and education.</p>
+            </div>
+            <div class="profile">
+                <img src="profile.jpg" alt="Your Photo">
+                <div class="contact">
+                    <a href="https://github.com/yourprofile" target="_blank" class="github-btn">
+                        <img src="github-icon.png" alt="GitHub"> GitHub
+                    </a>
+                    <a href="https://ssrn.com/author=yourid" target="_blank" class="ssrn-btn">
+                        <img src="ssrn-icon.png" alt="SSRN"> SSRN
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="education" class="section">
+        <h2>Education</h2>
+        <p>[Your Educational Background]</p>
+    </section>
+    
+    <section id="publications" class="section">
+        <h2>Publications</h2>
+        <p>[Your Publications]</p>
+    </section>
+    
+    <section id="teaching" class="section">
+        <h2>Teaching</h2>
+        <p>[Your Teaching Information]</p>
+    </section>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@300;400;700&family=Gotham:wght@200;300;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Iansui:wght@400;700&display=swap');
+        
+        body {
+            font-family: "Roboto Serif", serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fffbfb;
+            scroll-behavior: smooth;
+            color: #333;
+            font-weight: 400;
+        }
+        body::after {
+            content: "";
+            display: block;
+            height: 200px; /* Adjust as needed */
+        }
+
+        p, ul, ol, li {
+            line-height: 1.8; /* Adjust as needed */
+            margin-bottom: 10px; /* Adds space between list items */
+            font-size: 18px;
+        }
+
+        a {
+            text-decoration: none; /* No underline for all links */
+            color: #0078a6;
+            font-size: 18px;
+        }
+
+        a:hover {
+            color: #d16f54; /* Change color on hover */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        nav {
+            background: #f0ebeb;
+            color: #4898ad;
+            position: fixed;
+            width: 90%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            z-index: 1000;
+        }
+        
+        .nav-left {
+            font-size: 25px;
+            font-weight: bold;
+            font-family: "DM Serif Display", "Iansui", serif;
+            flex-grow: 1;
+            letter-spacing: 3px;
+        }
+        
+        .nav-right {
+            display: flex;
+            list-style: none;
+            font-family: "DM Serif Display", serif;
+            gap: 20px;
+            letter-spacing: 3px;
+        }
+
+        .nav-left li {
+            display: inline;
+        }
+        
+        .nav-left li a {
+            color: #364043;
+            text-decoration: none;
+            font-size: 25px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        
+        .nav-right li {
+            display: inline;
+        }
+        
+        .nav-right li a {
+            color: #4898ad;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: normal;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        
+        h1, h2 {
+            font-family: "DM Serif Display", serif;
+            color: #4898ad;
+            letter-spacing: 2px;
+            scroll-margin-top: 50px; /* Adjust based on navbar height */
+        }
+
+        #home .content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: space-around; /* flex-start */
+            gap: 20px;
+            padding-top: 130px;
+        }
+
+        .intro {
+            flex: 2; /* Takes 2/3 of the space */
+            min-width: 400px;
+            text-align: left;
+            padding-top: 0px;
+        }
+
+        .profile {
+            flex: 1; /* Takes 1/3 of the space */
+            min-width: 250px;
+            text-align: center;
+        }
+
+        .section {
+            padding: 20px 0; /* Reduce padding to bring sections closer */
+            max-width: 900px;
+            width: 90%;
+            margin: auto;
+        }
+        
+        .profile img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            clip-path: circle(50%);
+            object-fit: cover;
+            margin-top: 10px; /* Align image to the top */
+        }
+        .contact {
+            margin-top: 10px;
+        }
+        
+        .contact a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            /* color: white; */
+            font-weight: 300;
+            padding: 10px 15px;
+            /* border-radius: 15px; */
+            /* margin: 15px;
+            width: 15px; */
+            /* line-height: 1.0; */
+            font-size: 16px;
+        }
+
+        .email-contact {
+            text-decoration: none;
+            color: #364043; /* Matches theme */
+            font-size: 18px;
+            /* font-weight: bold; */
+        }
+
+        .email-contact:hover {
+            text-decoration: underline;
+            color: #d16f54; /* Changes color on hover */
+        }
+        .github-btn {
+            background-color: #0078a6;
+        }
+        
+        .ssrn-btn {
+            background-color: #34becf;
+        }
+        
+        .contact a img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            #home .content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile {
+                order: -1; /* Moves photo & contact to the top */
+                width: 100%;
+            }
+            .intro {
+                width: 100%;
+            }
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #4898ad;
+            position: absolute;
+            right: 5%;
+            top: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-right {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 5%;
+                background: #f0f0f0;
+                padding: 10px;
+                border-radius: 5px;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left"><li><a href="#home">高尚 Shang Gao</a></li></div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-right">
+                <li><a href="#education">Education</a></li>
+                <li><a href="#publication">Research</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="section">
+        <div class="content">
+            <div class="intro">
+                <h1>About Me</h1>
+                <p>I am a postdoctoral researcher at the School of Economics and Management, Tsinghua University, under the supervision of Prof. Liangjun Su. My research interests include theoretical econometrics, factor models, and machine learning. Additionally, I am intrigued by the intersection of technology and the philosophy of science.</p>
+
+                <p>I hold a Ph.D. in Economics from Fudan University. Prior to that, I earned both my B.A. and M.A. in Economics from Sun Yat-sen University.</p>
+
+                <p>I am an anti-labelist, non-perfect feminist, podcast lover, and hyper-procrastinator:) </p>
+            </div>
+            <div class="profile">
+                <img src="assets/about.jpg" alt="Your Photo">
+                <div class="contact">
+                    <!-- <a href="https://github.com/yourprofile" target="_blank" class="github-btn">
+                        <img src="github-icon.png" alt="GitHub"> 
+                    </a>
+                    <a href="https://ssrn.com/author=yourid" target="_blank" class="ssrn-btn">
+                        <img src="ssrn-icon.png" alt="SSRN"> 
+                    </a> -->
+                    <a style="font-size: 20pt; font-weight: 400; font-family: 'DM Serif Display', serif; letter-spacing: 3px;">Shang Gao</a><br>
+                    <a href="gaoshang@sem.tsinghua.edu.cn" class="email-contact">gaoshang@sem.tsinghua.edu.cn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="education" class="section">
+        <h2>Education</h2>
+        <li> <b>Ph.D. in Economics</b>: Fudan University, 2024</li>
+        <li> <b>M.A. in Economics</b>: Sun Yat-sen University, 2020</li>
+        <li> <b>B.A. in Economics</b>: Sun Yat-sen University, 2018</li>
+    </section>
+    
+    <section id="publication" class="section">
+        <h2>Publication</h2>
+        <li> Fu, Z., <b>Gao, S.</b>, Su, L.and Wang, X. <a href="https://doi.org/10.1017/S0266466622000494" target="_blank">Testing for strict stationarity via the discrete Fourier transform</a>, <i>Econometric Theory</i>, 2024, 40, 511–557. </li>
+
+        <h2>Working Papers</h2>
+        <li> <b>Gao, S.</b>, Fu, Z., Su, L. and Wang, X. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5013647" target="_blank">High-dimensional conditional factor model</a>, working paper. </li>
+        <li> Fu, Z., <b>Gao, S.</b>,  Su, L. and Wang, X. On state-varying FAVAR model: estimation and inference, working paper. </li>
+    </section>
+    
+    <section id="teaching" class="section">
+        <h2>Teaching</h2>
+        <p>I served as a teaching assistant for <i>Econometrics I</i> (undergraduate), <i>Probability Theory and Mathematical Statistics</i> (undergraduate), and <i>Nonparametric Machine Learning</i> (graduate).</p>
+    </section>
+    <script>
+        function toggleMenu() {
+            var navRight = document.querySelector(".nav-right");
+            if (navRight.style.display === "flex") {
+                navRight.style.display = "none";
+            } else {
+                navRight.style.display = "flex";
+            }
+        }
+
+        document.querySelectorAll(".nav-right a").forEach(anchor => {
+            anchor.addEventListener("click", function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute("href").substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Adjust based on navbar height
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
