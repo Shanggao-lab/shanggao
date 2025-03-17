@@ -207,6 +207,20 @@
             margin-right: 8px;
         }
 
+        .footer__copy {
+            font-size: 16px;
+            text-align: center;
+            color: #a2a2a2;
+            padding: 1rem 0;
+            margin-bottom: 0;
+        }
+
+        footer {
+            position: relative;
+            margin-top: 50px;
+            width: 100%;
+        }
+
         @media (max-width: 768px) {
             #home .content {
                 flex-direction: column;
@@ -275,10 +289,10 @@
 
                 <p>I earned my Ph.D. in Economics from Fudan University, where I was supervised by Prof. Shiyu Xie and Prof. Zhonghao Fu. Before that, I completed both my B.A. and M.A. in Economics at Sun Yat-sen University, under the guidance of Prof. Xia Wang.</p>
 
-                <!-- <p style="font-weight: 300;">Beyond academia, I am an anti-labelist, an existential nihilist, a podcast enthusiast, a cyborg-fence-sitter and a chronic procrastinator;) </p> -->
+                <p style="font-weight: 400;color: #9f8888;">Beyond academia, I am an anti-labelist, an existential nihilist, a podcast enthusiast, a cyborg-fence-sitter and a chronic procrastinator;) </p>
             </div>
             <div class="profile">
-                <img src="assets/about.jpg" alt="Your Photo">
+                <img src="assets/img/profile.jpg" alt="Your Photo">
                 <div class="contact">
                     <!-- <a href="https://github.com/yourprofile" target="_blank" class="github-btn">
                         <img src="github-icon.png" alt="GitHub"> 
@@ -314,6 +328,11 @@
         <h2>Teaching</h2>
         <p>I served as a teaching assistant for <i>Econometrics I</i> (undergraduate), <i>Probability Theory and Mathematical Statistics</i> (undergraduate), and <i>Nonparametric Machine Learning</i> (graduate).</p>
     </section>
+
+    <footer>
+        <p class="footer__copy">© 2025 Shang Gao. All rights reserved</p>
+    </footer>
+
     <script>
         function toggleMenu() {
             var navRight = document.querySelector(".nav-right");
