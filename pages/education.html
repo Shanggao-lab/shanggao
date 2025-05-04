@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shang Gao - Education</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("../pages/header.html", function() {
+                $(".header-link[href='../pages/education.html']").addClass("w--current");
+            });
+            $("#footer").load("../pages/footer.html");
+        });
+    </script>
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="standard-container">
+        <div class="content-wrapper">
+            <h2 class="section-heading-title">Education</h2>
+            
+            <div class="education-wrapper">
+                <div class="education-item">
+                    <h3 class="education-title">Ph.D. in Economics</h3>
+                    <div class="education-subtitle">School of Economics, Fudan University, Shanghai</div>
+                    <div class="education-date">2024</div>
+                    <div class="education-description">Supervisors: Prof. Shiyu Xie and Prof. Zhonghao Fu</div>
+                </div>
+
+                <div class="education-item">
+                    <h3 class="education-title">M.A. in Economics</h3>
+                    <div class="education-subtitle">Lingnan College, Sun Yat-sen University, Guangzhou</div>
+                    <div class="education-date">2020</div>
+                    <div class="education-description">Supervisor: Prof. Xia Wang</div>
+                </div>
+
+                <div class="education-item">
+                    <h3 class="education-title">B.A. in Economics</h3>
+                    <div class="education-subtitle">Lingnan College, Sun Yat-sen University, Guangzhou</div>
+                    <div class="education-date">2018</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+</body>
+</html> 
