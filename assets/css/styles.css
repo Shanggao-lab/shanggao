@@ -63,7 +63,7 @@ body {
 }
 
 .header-link {
-    font-family: 'Pitchsans Regular',"Iansui", sans-serif;
+    font-family: 'Pitchsans Semibold',"Iansui", sans-serif;
     text-decoration: none;
     color: #333;
     font-size: 16px;
@@ -80,6 +80,19 @@ body {
 .header-link.w--current {
     color: var(--y2k-accent);
     font-family: 'Pitchsans Semibold',"Iansui", sans-serif;
+}
+
+/* Hide "Shang Gao" on narrow screens */
+@media (max-width: 768px) {
+    .header-link .full-name {
+        display: none;
+    }
+    
+    .header-link:first-child::before {
+        content: "高尚";
+        font-size: 16px;
+        font-family: 'Pitchsans Semibold',"Iansui", sans-serif;
+    }
 }
 
 /* Container */
@@ -123,12 +136,14 @@ body {
 }
 
 .arlen-portrait {
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
     object-fit: cover;
+    border-radius: 50%;
+    clip-path: circle(50%);
     margin-bottom: 0;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    border-radius: 8px;
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1);
+    /* border-radius: 8px; */
 }
 
 .bio-highlights {
@@ -383,28 +398,26 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 991px) {
+@media (max-width: 992px) {
     .bio-statement-and-portrait {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-
+    
     .portrait-container {
         text-align: center;
+        order: -1; /* Move portrait to top */
     }
-
-    .bio-highlights {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .education-wrapper {
-        grid-template-columns: 1fr;
+    
+    .personal-statement {
+        max-width: 100%;
     }
 }
 
-@media (max-width: 767px) {
-    .bio-highlights {
-        grid-template-columns: 1fr;
+@media (max-width: 768px) {
+    .arlen-portrait {
+        width: 250px;
+        height: 250px;
     }
 
     .navigation {
@@ -429,5 +442,12 @@ body {
         /* flex-direction: column; */
         align-items: center;
         gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .arlen-portrait {
+        width: 200px;
+        height: 200px;
     }
 } 
