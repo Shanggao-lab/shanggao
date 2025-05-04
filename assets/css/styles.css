@@ -148,7 +148,7 @@ body {
 
 .bio-highlights {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 2fr);
     gap: 30px;
     margin-top: 60px;
 }
@@ -420,6 +420,10 @@ body {
         height: 250px;
     }
 
+    .bio-highlights {
+        grid-template-columns: 1fr;
+    }
+
     .navigation {
         padding: 15px 5%;
     }
@@ -449,5 +453,8 @@ body {
     .arlen-portrait {
         width: 200px;
         height: 200px;
+    }
+    .bio-highlights {
+        grid-template-columns: 1fr;
     }
 } 
