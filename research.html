@@ -8,10 +8,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(function(){
-            $("#header").load("/pages/header.html", function() {
-                $(".header-link[href='../pages/research.html']").addClass("w--current");
+            $("#header").load("header.html", function() {
+                $(".header-link[href='research.html']").addClass("w--current");
             });
-            $("#footer").load("/pages/footer.html");
+            $("#footer").load("footer.html");
 
             // Add abstract toggle functionality
             $('.abstract-toggle').click(function() {
