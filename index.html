@@ -12,6 +12,12 @@
                 $(".header-link[href='index.html']").addClass("w--current");
             });
             $("#footer").load("footer.html");
+
+            // Abstract toggles (for research section)
+            $(document).on('click', '.abstract-toggle', function(){
+                $(this).toggleClass('expanded');
+                $(this).next('.research-abstract').toggleClass('expanded');
+            });
         });
     </script>
 </head>
@@ -24,13 +30,25 @@
             <div class="bio-statement-and-portrait">
                 
                 <div class="personal-statement">
-                    <h2 class="section-heading-title">Hi! I'm Shang Gao</h2>
-                    <h3 class="section-heading-subtitle">A postdoctoral researcher in econometrics</h3>
-                    <p>I am a postdoctoral researcher at School of Economics and Management, Tsinghua University, supervised by Prof. Liangjun Su.</p>
-                    <p>My research focuses on theoretical econometrics, factor models, and machine learning. I am also fascinated by the intersection of technology and the philosophy of science.</p>
+                    <h2 class="section-heading-title">Hi! I'm Shang Gao.</h2>
+                    <!-- <h3 class="section-heading-subtitle">postdoctoral researcher</h3> -->
+                    <p>I am a postdoctoral researcher at the School of Economics and Management, Tsinghua University, where I work under the supervision of <a href="https://www.sem.tsinghua.edu.cn/info/1206/32089.htm" style="color: var(--y2k-secondary); font-weight: 600; text-decoration: none;">Prof. Liangjun Su</a>.</p>
+                    <p>My research focuses on theoretical econometrics, factor models, and machine learning, with applications in macroeconomics and finance.</p>
+                    <p>I received my Ph.D. in Economics from Fudan University in 2024, and my M.A. and B.A. in Economics from Lingnan College, Sun Yat-sen University in 2020 and 2018, respectively.</p>
                 </div>
                 <div class="portrait-container">
                     <img src="assets/img/profile.jpg" alt="Shang Gao" class="arlen-portrait">
+                    <div class="contact-compact">
+                        <a href="mailto:gaoshang@sem.tsinghua.edu.cn">gaoshang@sem.tsinghua.edu.cn</a><br>
+                        <span>Qidi Technology Building C, 100084</span><br>
+                        <span>Haidian District, Beijing, China</span><br>
+                        <a  href="assets/CV.pdf" target="_blank">CV</a>  <span> | </span>
+                        <a href="https://github.com/Shanggao-lab" target="_blank">GitHub</a>
+                        <span> | </span>
+                        <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7169953" target="_blank">SSRN</a>
+                        
+                       
+                    </div>
                 </div>
             </div>
             <div class="bio-highlights">
@@ -38,23 +56,28 @@
                     <h6 class="grid-titles">Research Interests</h6>
                     <div class="grid-paragraph">Theoretical Econometrics<br>Factor Models<br>Machine Learning</div>
                 </div>
-                <div class="bio-highlight-square">
+                <!-- <div class="bio-highlight-square">
                     <h6 class="grid-titles">Current Position</h6>
                     <div class="grid-paragraph">Postdoctoral Researcher<br>School of Economics and Management<br>Tsinghua University</div>
-                </div>
+                </div> -->
                 <div class="bio-highlight-square">
                     <h6 class="grid-titles">Contact</h6>
                     <div class="grid-paragraph">
                         <a href="mailto:gaoshang@sem.tsinghua.edu.cn" style="color: var(--y2k-secondary); font-weight: 600; text-decoration: none;">gaoshang@sem.tsinghua.edu.cn</a>
+                        <a>Beijing, China</a>
+                        <br>
+                        <a href="https://github.com/Shanggao-lab" style="color: var(--y2k-secondary); font-weight: 600; text-decoration: none;">GitHub</a> | 
+                        <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7169953" style="color: var(--y2k-secondary); font-weight: 600; text-decoration: none;">SSRN</a>  
+                        <!-- <a href="" style="color: var(--y2k-secondary); font-weight: 600; text-decoration: none;">Google Scholar</a> -->
                     </div>
                 </div>
-                <div class="bio-highlight-square">
+                <!-- <div class="bio-highlight-square">
                     <h6 class="grid-titles">Location</h6>
                     <div class="grid-paragraph">
                         <a>Beijing, China</a>
                     </div>
-                </div>
-                <div class="bio-highlight-square">
+                </div> -->
+                <!-- <div class="bio-highlight-square">
                     <h6 class="grid-titles">Links</h6>
                     <div class="grid-paragraph">
                         <a href="https://github.com/Shanggao-lab" style="color: var(--y2k-secondary); font-weight: 600; text-decoration: none;">GitHub</a> | 
@@ -67,9 +90,81 @@
                     <div class="grid-paragraph">
                         <a href="" style="color: var(--y2k-secondary); font-weight: 600; text-decoration: none;">Download</a>
                     </div>
+                </div> -->
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <!-- <div class="content-wrapper" id="education">
+            <h2 class="section-heading-title">Education</h2>
+            <ul class="education-list">
+                <li><span class="education-date">2024</span> Ph.D. in Economics</span>, School of Economics, Fudan University</li>
+                <li><span class="education-date">2020</span> M.A. in Economics</span>, Lingnan College, Sun Yat-sen University</li>
+                <li><span class="education-date">2018</span> B.A. in Economics</span>, Lingnan College, Sun Yat-sen University</li>
+            </ul>
+        </div> -->
+
+        <!-- Research Section -->
+        <div class="content-wrapper" id="research">
+            <h2 class="section-heading-title">Research</h2>
+            <h3 class="research-subsection-title">Publications</h3>
+            <div class="research-item">
+                <h3 class="research-title">Testing for strict stationarity via the discrete Fourier transform</h3>
+                <div class="research-authors">with <a href="https://econ.fudan.edu.cn/info/1028/14200.htm" style="color: var(--y2k-secondary); font-weight: 600; text-decoration: none;">Zhonghao Fu</a>, <a href="https://www.sem.tsinghua.edu.cn/info/1206/32089.htm" style="color: var(--y2k-secondary); font-weight: 600; text-decoration: none;">Liangjun Su</a>, and <a href="https://econ.ruc.edu.cn/jszy/470178386a474e21a2c3ecf925c2c536.htm" style="color: var(--y2k-secondary); font-weight: 600; text-decoration: none;">Xia Wang</a></div>
+                <div class="research-status">Econometric Theory, 2024, 40, 511–557</div>
+                <div class="abstract-toggle">Abstract</div>
+                <div class="research-abstract">
+                    This paper proposes a model-free test for the strict stationarity of a potentially vector-valued time series using the discrete Fourier transform (DFT) approach. We show that the DFT of a residual process based on the empirical characteristic function weakly converges to a zero spectrum in the frequency domain for a strictly stationary time series and a nonzero spectrum otherwise. The proposed test is powerful against various types of nonstationarity including deterministic trends and smooth or abrupt structural changes. It does not require smoothed nonparametric estimation and, thus, can detect the Pitman sequence of local alternatives at the parametric rate T^{-1/2}, faster than all existing nonparametric tests. We also design a class of derivative tests based on the characteristic function to test the stationarity in various moments. Monte Carlo studies demonstrate that our test has reasonable size and excellent power. Our empirical application of exchange rates strongly suggests that both nominal and real exchange rate returns are nonstationary, which the augmented Dickey–Fuller and Kwiatkowski–Phillips–Schmidt–Shin tests may overlook.
+                </div>
+                <a href="https://doi.org/10.1017/S0266466622000494" class="research-link" target="_blank">View Paper</a>
+            </div>
+            <h3 class="research-subsection-title">Working Papers</h3>
+            <div class="research-item">
+                <h3 class="research-title">High-dimensional conditional factor model</h3>
+                <div class="research-authors">with Zhonghao Fu, Liangjun Su, and Xia Wang</div>
+                <div class="research-status">R & R</div>
+                <div class="abstract-toggle">Abstract</div>
+                <div class="research-abstract">
+                    This paper studies the estimation and variable selection in conditional factor models with high-dimensional instruments, where the coefficient matrix exhibits a low-rank and row-sparse structure. We propose a multi-stage estimation procedure that combines nuclear norm regularization and adaptive group LASSO regression to consistently estimate latent factors and row-sparse loading coefficients, while selecting relevant instrumental characteristics. We establish theoretical results for estimation consistency, selection consistency, and post-LASSO inference for estimators of factors and loading coefficients at multiple stages. Furthermore, we implement a singular value thresholding procedure to determine the number of factors. Simulation results demonstrate the effectiveness of our estimators in consistently estimating factor loadings, selecting the appropriate number of factors, and conducting inference. Finally, we apply the proposed method to an empirical study on asset return prediction, showcasing its practical utility in real-world applications.
+                </div>
+                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5013647" class="research-link">View Paper</a>
+            </div>
+            <div class="research-item">
+                <h3 class="research-title">On state-varying FAVAR models: estimation, inference and testing</h3>
+                <div class="research-authors">with Zhonghao Fu, Liangjun Su, and Xia Wang</div>
+                <div class="research-status">Submitted</div>
+                <div class="abstract-toggle">Abstract</div>
+                <div class="research-abstract">
+                    We introduce a state-varying factor-augmented vector autoregressive (FAVAR) model, wherein both factor loadings and FAVAR coefficients vary as general functions of a stochastic state process. We propose a two-stage estimation procedure that combines local principal component analysis with nonparametric kernel regressions to consistently estimate the model. We also establish a limiting distribution theory and the consistency of impulse response functions (IRFs) for the estimators of the state-varying FAVAR coefficients. To gauge potential sources of state-dependency features in the underlying FAVAR model, we propose three test statistics based on the discrete Fourier transform. Simulation results show the excellent performance of our estimators, IRF estimators, and test statistics in finite samples. We also apply the state-varying FAVAR model to examine the monetary policy transmission mechanism, using U.S. data. Our findings reveal that the IRFs of macroeconomic variables to a monetary policy shock are influenced by state variables, such as economic slackness and uncertainty indices. 
+                </div>
+            </div>
+
+            <div class="research-item">
+                <h3 class="research-title">Sieve estimation of high-dimensional conditional factor models</h3>
+                <div class="research-authors">with Liangjun Su</div>
+                <div class="research-status">Working Paper</div>
+                
+            </div>
+        </div>
+
+        <!-- Misc / Teaching Section -->
+        <div class="content-wrapper" id="misc">
+            <h2 class="section-heading-title">Teaching Assistant Experience</h2>
+            <div class="teaching-wrapper">
+                <div class="teaching-item">
+                    <div class="teaching-description">
+                        <ul>
+                            <li><em>Panel Data Econometrics</em>, Fall 2024 & Fall 2020</li>
+                            <li><em>Big Data Financial Analytics</em> (with sessions), Fall 2023 & Fall 2021</li>
+                            <li><em>Probability and Statistics</em> (with sessions), Fall 2022 & Spring 2023</li>
+                            <li><em>Econometrics I</em> (with lab sessions), Spring 2022 & 2023</li>
+                            <li><em>Intermediate Macroeconomics</em>, Spring 2019</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 
     <div id="footer"></div>

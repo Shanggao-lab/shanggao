@@ -112,7 +112,32 @@ body {
 
 /* Content Wrappers */
 .content-wrapper {
-    margin-bottom: 60px;
+    margin-bottom: 96px;
+}
+@media (max-width: 768px) {
+    .content-wrapper {
+        margin-bottom: 64px;
+    }
+}
+
+/* Extra top spacing for section headings inside sections */
+.content-wrapper > .section-heading-title {
+    margin-top: 96px;
+}
+@media (min-width: 992px) {
+    .content-wrapper > .section-heading-title {
+        margin-top: 72px;
+    }
+}
+
+/* Prevent fixed header from covering anchored sections */
+.content-wrapper[id] {
+    scroll-margin-top: 120px;
+}
+@media (max-width: 768px) {
+    .content-wrapper[id] {
+        scroll-margin-top: 90px;
+    }
 }
 
 /* Bio/About Specific */
@@ -121,29 +146,34 @@ body {
     grid-template-columns: 1fr auto;
     gap: 80px;
     margin-bottom: 60px;
-    align-items: end;
+    align-items: stretch; /* make columns equal height */
 }
 
 .personal-statement {
     font-size: 18px;
     line-height: 1.8;
     max-width: 800px;
+    display: flex;              /* distribute heading and bottom text */
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .portrait-container {
     text-align: right;
     margin-top: 0;
+    display: flex;              /* keep image at top and contact at bottom */
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .arlen-portrait {
-    width: 280px;
-    height: 280px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
-    border-radius: 50%;
-    clip-path: circle(50%);
     margin-bottom: 0;
-    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1);
-    /* border-radius: 8px; */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border-radius: 50%;
 }
 
 .bio-highlights {
@@ -397,20 +427,66 @@ body {
     color: var(--y2k-accent);
 }
 
+/* Compact contact under portrait */
+.contact-compact {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.contact-compact a {
+    color: #3366cc;
+    text-decoration: none;
+}
+.contact-compact a:hover {
+    text-decoration: underline;
+}
+
+/* Hide old highlight boxes section on the homepage to tighten layout */
+.bio-highlights { display: none; }
+
+/* Tighten research items into single-line rows without boxes */
+.research-item {
+    background: transparent;
+    box-shadow: none;
+    padding: 6px 0;
+}
+.research-title,
+.research-authors,
+.research-status {
+    display: inline;
+    margin-right: 8px;
+}
+.research-link { display: inline; margin-left: 8px; }
+.abstract-toggle, .research-abstract { display: none; }
+
 /* Responsive Design */
 @media (max-width: 992px) {
     .bio-statement-and-portrait {
         grid-template-columns: 1fr;
         gap: 40px;
+        align-items: start; /* natural flow */
     }
     
     .portrait-container {
         text-align: center;
         order: -1; /* Move portrait to top */
+        display: block; /* reset flex */
     }
     
     .personal-statement {
         max-width: 100%;
+        display: block; /* reset flex */
+        height: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    /* Align hero heading with portrait top on wide screens */
+    .bio-statement-and-portrait .section-heading-title {
+        margin-top: 0;
+    }
+    .arlen-portrait {
+        margin-top: 6px; /* nudge image down slightly for visual alignment */
     }
 }
 
@@ -458,3 +534,25 @@ body {
         grid-template-columns: 1fr;
     }
 } 
+
+/* Pill (capsule) link */
+.pill-link {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    border: 1px solid #ddd;
+    background: #f7f7f7;
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    line-height: 1;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+.pill-link:hover {
+    background: #ececec;
+    border-color: #ccc;
+}
+
+/* Space above contact list under portrait */
+.contact-compact { margin-top: 12px; }
+.contact-compact .pill-link { margin-top: 8px; } 
