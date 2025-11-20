@@ -29,6 +29,12 @@
     --y2k-dark: #364043;
 }
 
+/* Chinese font setup for zh mode - scoped to i18n elements only */
+:root { --cjk-serif: "Source Han Serif SC", "Noto Serif CJK SC", "Source Han Serif CN", "Songti SC", "SimSun", serif; }
+
+/* Remove blanket override: ensure only translatable nodes switch font */
+body[data-lang="zh"] [data-i18n] { font-family: var(--cjk-serif) !important; letter-spacing: 0.04em; }
+
 /* Base Styles */
 body {
     font-family: 'Pitchsans Regular', sans-serif;
@@ -552,3 +558,31 @@ body {
 /* Space above contact list under portrait */
 .contact-compact { margin-top: 12px; }
 .contact-compact .pill-link { margin-top: 8px; } 
+
+/* Language toggle button */
+.lang-toggle {
+    margin-left: auto;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    border: 1px solid #ddd;
+    background: #f7f7f7;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+}
+.lang-toggle:hover { background: #ececec; }
+
+/* Language visibility */
+.lang-zh { display: none; }
+body.lang-zh .lang-en { display: none; }
+body.lang-zh .lang-zh { display: inline; }
+
+/* For block elements in zh */
+.lang-zh.block { display: none; }
+body.lang-zh .lang-zh.block { display: block; } 
+
+/* Align language link to the right within header group */
+.lang-link { margin-left: auto; }
+
+/* Reduce paragraph spacing in bio */
+.personal-statement p { margin: 6px 0 8px; } 
