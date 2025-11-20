@@ -63,19 +63,23 @@ body {
 
 .header-link-group {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     max-width: 1200px;
     width: 100%;
     justify-content: flex-start;
+    align-items: center;
 }
 
 .header-link {
     font-family: 'Pitchsans Semibold',"Iansui", sans-serif;
     text-decoration: none;
     color: #333;
-    font-size: 18px;
+    font-size: 16px;
     transition: color 0.3s ease;
-    justify-content: flex-start;
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 0;
+    margin: 0;
 }
 
 .header-link:hover {
@@ -583,7 +587,7 @@ body.lang-zh .lang-zh { display: inline; }
 body.lang-zh .lang-zh.block { display: block; } 
 
 /* Align language link to the right within header group */
-.lang-link { margin-left: auto; }
+.lang-link { margin-left: auto; font-size: 16px; line-height: 1; padding: 6px 0; }
 
 /* Reduce paragraph spacing in bio */
 .personal-statement p { margin: 6px 0 8px; } 

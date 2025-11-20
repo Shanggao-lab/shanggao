@@ -67,6 +67,7 @@
             view_paper: "View Paper",
             nav_research: "Research",
             nav_misc: "Teaching",
+            nav_cv: "CV download",
             addr_line1: "Qidi Technology Building C, 100084",
             addr_line2: "Haidian District, Beijing, China"
           },
@@ -83,6 +84,7 @@
             view_paper: "查看论文",
             nav_research: "研究",
             nav_misc: "教学",
+            nav_cv: "简历下载",
             addr_line1: "清华科技园启迪科技大厦C座1602，100084",
             addr_line2: "中国 北京市 海淀区"
           }
@@ -105,7 +107,7 @@
           const stored = localStorage.getItem('lang');
           const preferred = (stored === 'zh' || stored === 'en')
             ? stored
-            : ((navigator.language || '').startsWith('zh') ? 'zh' : 'en');
+            : 'en';
           applyLang(preferred);
           document.addEventListener('click', function(e){
             if (e.target && e.target.id === 'lang-toggle') {
