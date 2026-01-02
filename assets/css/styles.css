@@ -288,7 +288,7 @@ body {
     letter-spacing: 0.05em;
     margin: 100px 0 30px;
     color: var(--y2k-dark);
-    border-bottom: 2px solid var(--y2k-accent);
+    border-bottom: 1.5px solid var(--y2k-accent);
     padding-bottom: 10px;
 }
 
@@ -301,7 +301,7 @@ body {
     font-family: 'Pitchsans Regular', sans-serif;
     font-size: 18px;
     color: #666;
-    
+
     margin-bottom: 10px;
 }
 
