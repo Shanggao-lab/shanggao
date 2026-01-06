@@ -56,7 +56,7 @@
         const I18N = {
           en: {
             hero_title: "Hi! I'm Shang Gao.",
-            hero_p1_pre: "I am a postdoctoral researcher at School of Economics and Management, Tsinghua University, where I work under the supervision of ",
+            hero_p1_pre: "I am a postdoctoral researcher at School of Economics and Management, Tsinghua University, where I am fortunate to be advised by ",
             hero_p1_post: ".",
             hero_p2: "My research focuses on theoretical econometrics, large dimensional factor models, and machine learning, with applications in macroeconomics and finance.",
             hero_p3: "I received my Ph.D. in Economics from Fudan University in 2024, and my M.A. and B.A. in Economics from Lingnan College, Sun Yat-sen University in 2020 and 2018, respectively.",
@@ -118,10 +118,51 @@
 
         $(function(){
             $("#header").load("header.html", function() {
-                $(".header-link[href='index.html']").addClass("w--current");
+                // Highlight the current section in the nav if needed, or just default to about
+                // $(".header-link[href='#about']").addClass("w--current"); 
                 initLang();
             });
             $("#footer").load("footer.html");
+
+            // Custom Smooth Scroll with Easing
+            // We delegate the click event to the document because the header is loaded dynamically.
+            $(document).on('click', 'a[href^="#"]', function(e) {
+                const targetId = $(this).attr('href');
+                // Skip if it's just '#' (like the language toggle)
+                if (targetId === '#') return;
+                
+                const $target = $(targetId);
+                if ($target.length) {
+                    e.preventDefault();
+                    
+                    // Parameters
+                    const duration = 1200; // duration in ms (slower = more dramatic inertia)
+                    const headerOffset = 100; // offset for fixed header
+                    
+                    const startPosition = window.scrollY;
+                    const targetPosition = $target.offset().top - headerOffset;
+                    const distance = targetPosition - startPosition;
+                    let startTime = null;
+        
+                    function animation(currentTime) {
+                        if (startTime === null) startTime = currentTime;
+                        const timeElapsed = currentTime - startTime;
+                        const progress = Math.min(timeElapsed / duration, 1);
+                        
+                        // Easing function: easeOutQuart (subtle Apple-like inertia)
+                        // Formula: 1 - (1 - t)^4
+                        const ease = 1 - Math.pow(1 - progress, 4);
+                        
+                        window.scrollTo(0, startPosition + distance * ease);
+                        
+                        if (timeElapsed < duration) {
+                            requestAnimationFrame(animation);
+                        }
+                    }
+                    
+                    requestAnimationFrame(animation);
+                }
+            });
 
             // Abstract toggles (for research section)
             $(document).on('click', '.abstract-toggle', function(){
@@ -134,7 +175,7 @@
 <body>
     <div id="header"></div>
 
-    <div class="standard-container">
+    <div class="standard-container" id="about">
         <div class="content-wrapper">
             
             <div class="bio-statement-and-portrait">
