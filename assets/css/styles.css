@@ -24,7 +24,8 @@
 :root {
     --y2k-primary: #d3f5f5;
     --y2k-secondary: #698aff;
-    --y2k-accent: #ff6b6b;
+    --y2k-accent: #e96a6a; /* Updated to match the requested darker pink */
+    --y2k-accent-light: #ff8e8e; /* Lighter pink for main title */
     --y2k-metallic: #fafafabe;
     --y2k-light: #ffffff;
     --y2k-dark: #364043;
@@ -461,6 +462,40 @@ body {
 
 /* Hide old highlight boxes section on the homepage to tighten layout */
 .bio-highlights { display: none; }
+
+/* General Link Style (excluding header) */
+a:not(.header-link) {
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-decoration-thickness: 1px;
+    /* text-decoration-color: rgba(0, 0, 0, 0.4); */
+    text-underline-offset: 4px;
+    /* color: inherit; */ /* Inherit causes issues if color wasn't set */
+    transition: all 0.3s ease;
+}
+
+a:not(.header-link):hover {
+    color: var(--y2k-accent) !important; /* Force override of specific inline colors if needed */
+    text-decoration-color: var(--y2k-accent);
+    text-decoration-style: solid;
+}
+
+/* Specific override for research link titles to ensure they behave */
+.research-link-title {
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgba(0, 0, 0, 0.4);
+    text-underline-offset: 4px;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.research-link-title:hover {
+    color: var(--y2k-accent);
+    text-decoration-color: var(--y2k-accent);
+    text-decoration-style: solid;
+}
 
 /* Tighten research items into single-line rows without boxes */
 .research-item {
