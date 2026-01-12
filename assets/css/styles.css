@@ -474,6 +474,11 @@ a:not(.header-link) {
     transition: all 0.3s ease;
 }
 
+.author-link {
+    color: var(--y2k-secondary);
+    font-weight: 600;
+}
+
 a:not(.header-link):hover {
     color: var(--y2k-accent) !important; /* Force override of specific inline colors if needed */
     text-decoration-color: var(--y2k-accent);
