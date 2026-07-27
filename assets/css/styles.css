@@ -161,7 +161,7 @@ body {
     grid-template-columns: 1fr auto;
     gap: 80px;
     margin-bottom: 60px;
-    align-items: stretch; /* make columns equal height */
+    align-items: start;
 }
 
 .personal-statement {
@@ -177,9 +177,9 @@ body {
 .portrait-container {
     text-align: right;
     margin-top: 0;
-    display: flex;              /* keep image at top and contact at bottom */
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: flex-end;
 }
 
 .arlen-portrait {
@@ -448,7 +448,7 @@ body {
 
 /* Compact contact under portrait */
 .contact-compact {
-    margin-top: 12px;
+    margin-top: 20px;
     font-size: 14px;
     line-height: 1.5;
 }
@@ -483,6 +483,16 @@ a:not(.header-link):hover {
     color: var(--y2k-accent) !important; /* Force override of specific inline colors if needed */
     text-decoration-color: var(--y2k-accent);
     text-decoration-style: solid;
+}
+
+/* Keep blue links clean in both default and hover states */
+a.author-link,
+a.author-link:hover,
+a.research-link,
+a.research-link:hover,
+.contact-compact a,
+.contact-compact a:hover {
+    text-decoration: none;
 }
 
 /* Specific override for research link titles to ensure they behave */
@@ -542,9 +552,6 @@ a:not(.header-link):hover {
     /* Align hero heading with portrait top on wide screens */
     .bio-statement-and-portrait .section-heading-title {
         margin-top: 0;
-    }
-    .arlen-portrait {
-        margin-top: 6px; /* nudge image down slightly for visual alignment */
     }
 }
 
@@ -612,7 +619,7 @@ a:not(.header-link):hover {
 }
 
 /* Space above contact list under portrait */
-.contact-compact { margin-top: 12px; }
+.contact-compact { margin-top: 18px; }
 .contact-compact .pill-link { margin-top: 8px; } 
 
 /* Language toggle button */
@@ -641,4 +648,4 @@ body.lang-zh .lang-zh.block { display: block; }
 .lang-link { margin-left: auto; font-size: 16px; line-height: 1; padding: 6px 0; }
 
 /* Reduce paragraph spacing in bio */
-.personal-statement p { margin: 6px 0 8px; } 
+.personal-statement p { margin: 6px 0 8px; }
