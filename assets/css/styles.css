@@ -1,25 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Gotham:wght@200;300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Iansui:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&display=swap');
-
-@font-face {
-    font-family: 'Pitchsans Semibold';
-    src: url('https://cdn.prod.website-files.com/5e2520252e290c852ed89624/5e8aa48a4fbaea249d25baf9_pitch-sans-web-semibold.woff2') format('woff2'),
-         url('https://cdn.prod.website-files.com/5e2520252e290c852ed89624/5e8aa48a8a0cee09608541d8_pitch-sans-web-semibold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: auto;
-}
-
-@font-face {
-    font-family: 'Pitchsans Regular';
-    src: url('https://cdn.prod.website-files.com/5e2520252e290c852ed89624/5e8aa5e7ab1cf843e0a81ef9_PitchSansWeb-Regular.woff2') format('woff2'),
-         url('https://cdn.prod.website-files.com/5e2520252e290c852ed89624/5e8aa5e74fbaea7b2d25bfa0_PitchSansWeb-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: auto;
-}
 
 :root {
     --y2k-primary: #d3f5f5;
@@ -39,7 +21,7 @@ body[data-lang="zh"] [data-i18n] { font-family: var(--cjk-serif) !important; let
 
 /* Base Styles */
 body {
-    font-family: 'Pitchsans Regular', sans-serif;
+    font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
     margin: 0;
     padding: 0;
     background-color: #ffffff;
@@ -53,6 +35,8 @@ body {
     top: 0;
     left: 0;
     right: 0;
+    height: 81px;
+    box-sizing: border-box;
     background: #ffffff;
     padding: 20px 0%;
     display: flex;
@@ -63,17 +47,18 @@ body {
 }
 
 .header-link-group {
-    display: flex;
+    display: grid;
+    grid-template-columns: max-content max-content minmax(0, 1fr);
     gap: 20px;
     max-width: 960px;
     width: 90%;
     margin: 0 auto;
-    justify-content: flex-start;
-    align-items: center;
+    align-items: baseline;
 }
 
 .header-link {
-    font-family: 'Pitchsans Semibold',"Iansui", sans-serif;
+    font-family: 'Newsreader', "Iansui", Georgia, 'Times New Roman', serif;
+    font-weight: 600;
     text-decoration: none;
     color: #333;
     font-size: 16px;
@@ -86,13 +71,12 @@ body {
 
 .header-link:hover {
     color: var(--y2k-accent);
-    font-family: 'Pitchsans Semibold',"Iansui", sans-serif;
-    /* font-weight: 600; */
+    font-family: 'Newsreader', "Iansui", Georgia, 'Times New Roman', serif;
 }
 
 .header-link.w--current {
     color: var(--y2k-accent);
-    font-family: 'Pitchsans Semibold',"Iansui", sans-serif;
+    font-family: 'Newsreader', "Iansui", Georgia, 'Times New Roman', serif;
 }
 
 /* Hide "Shang Gao" on narrow screens */
@@ -104,7 +88,7 @@ body {
     .header-link:first-child::before {
         content: "高尚";
         font-size: 16px;
-        font-family: 'Pitchsans Semibold',"Iansui", sans-serif;
+        font-family: 'Newsreader', "Iansui", Georgia, 'Times New Roman', serif;
     }
 }
 
@@ -125,9 +109,17 @@ body {
     color: #333;
 }
 
+.personal-statement .section-heading-title {
+    color: #333;
+}
+
+.hero-title-accent {
+    color: var(--y2k-accent);
+}
+
 /* Content Wrappers */
 .content-wrapper {
-    margin-bottom: 200px;
+    margin-bottom: 120px;
 }
 @media (max-width: 768px) {
     .content-wrapper {
@@ -165,7 +157,7 @@ body {
 }
 
 .personal-statement {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.8;
     max-width: 800px;
     display: flex;              /* distribute heading and bottom text */
@@ -205,7 +197,8 @@ body {
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 .grid-titles {
-    font-family: "Pitchsans Semibold", sans-serif;
+    font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+    font-weight: 600;
     font-size: 18px;
     margin-bottom: 15px;
     color: var(--y2k-dark);
@@ -233,14 +226,15 @@ body {
 }
 
 .education-title {
-    font-family: 'Pitchsans Semibold', sans-serif;
+    font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+    font-weight: 600;
     font-size: 24px;
     margin-bottom: 10px;
     color: #333;
 }
 
 .education-subtitle {
-    font-family: 'Pitchsans Regular', sans-serif;
+    font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
     font-size: 18px;
     color: #666;
     margin-bottom: 10px;
@@ -248,7 +242,8 @@ body {
 }
 
 .education-date {
-    font-family: 'Pitchsans Semibold', sans-serif;
+    font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+    font-weight: 600;
     font-size: 16px;
     color: var(--y2k-accent);
     margin-bottom: 15px;
@@ -276,8 +271,9 @@ body {
 }
 
 .research-title {
-    font-family: 'Pitchsans Semibold', sans-serif;
-    font-size: 18px;
+    font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+    font-weight: 600;
+    font-size: 20px;
     margin-bottom: 10px;
     color: #333;
 }
@@ -299,24 +295,35 @@ body {
 }
 
 .research-authors {
-    font-family: 'Pitchsans Regular', sans-serif;
-    font-size: 18px;
+    font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+    font-size: 20px;
     color: #666;
 
     margin-bottom: 10px;
 }
 
 .research-status {
-    font-family: 'Pitchsans Regular', sans-serif;
-    font-size: 18px;
-    color: var(--y2k-accent);
+    font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+    font-size: 20px;
+    color: #666;
     margin-bottom: 15px;
     font-style: italic;
-    font-weight: 600;
+    font-weight: 400;
+}
+
+.journal-name {
+    font-style: italic;
+    color: #000;
+}
+
+.publication-details {
+    color: #666;
+    font-style: normal;
+    font-weight: 400;
 }
 
 .research-abstract {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.8;
     color: #666;
     margin-bottom: 15px;
@@ -382,14 +389,15 @@ body {
 }
 
 .teaching-title {
-    font-family: 'Pitchsans Semibold', sans-serif;
+    font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+    font-weight: 600;
     font-size: 24px;
     margin-bottom: 10px;
     color: #333;
 }
 
 .teaching-subtitle {
-    font-family: 'Pitchsans Regular', sans-serif;
+    font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
     font-size: 18px;
     color: #666;
     margin-bottom: 15px;
@@ -435,7 +443,7 @@ body {
 }
 
 .footer-item {
-    font-family: 'Pitchsans Regular', sans-serif;
+    font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
     text-decoration: none;
     color: var(--y2k-dark);
     font-size: 16px;
@@ -448,8 +456,9 @@ body {
 
 /* Compact contact under portrait */
 .contact-compact {
-    margin-top: 20px;
-    font-size: 14px;
+    width: 100%;
+    margin-top: 24px;
+    font-size: 15px;
     line-height: 1.5;
 }
 .contact-compact a {
@@ -566,6 +575,7 @@ a.research-link:hover,
     }
 
     .navigation {
+        height: 71px;
         padding: 15px 5%;
     }
 
@@ -619,7 +629,6 @@ a.research-link:hover,
 }
 
 /* Space above contact list under portrait */
-.contact-compact { margin-top: 18px; }
 .contact-compact .pill-link { margin-top: 8px; } 
 
 /* Language toggle button */
@@ -645,7 +654,28 @@ body.lang-zh .lang-zh { display: inline; }
 body.lang-zh .lang-zh.block { display: block; } 
 
 /* Align language link to the right within header group */
-.lang-link { margin-left: auto; font-size: 16px; line-height: 1; padding: 6px 0; }
+.lang-link {
+    width: 3em;
+    margin-left: 0;
+    font-size: 16px;
+    line-height: 1;
+    padding: 6px 0;
+    justify-content: flex-end;
+    white-space: nowrap;
+    justify-self: end;
+}
 
 /* Reduce paragraph spacing in bio */
 .personal-statement p { margin: 6px 0 8px; }
+
+/* Give very wide screens a little more horizontal breathing room */
+@media (min-width: 1600px) {
+    .standard-container,
+    .header-link-group {
+        max-width: 1120px;
+    }
+
+    .bio-statement-and-portrait {
+        column-gap: 96px;
+    }
+}

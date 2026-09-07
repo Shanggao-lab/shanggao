@@ -60,10 +60,11 @@
     <script>
         const I18N = {
           en: {
-            hero_title: "Hi! I'm Shang Gao.",
+            hero_title_accent: "Hi!",
+            hero_title_rest: " I'm Shang Gao.",
             hero_p1: "I am an assistant professor at the Wang Yanan Institute for Studies in Economics (WISE), Xiamen University.",
             hero_p2: "My research focuses on theoretical econometrics, high-dimensional factor models, and hypothesis testing for structural changes, with applications in macroeconomics and finance.",
-            hero_p3: "Before joining WISE, I was a postdoctoral researcher at the School of Economics and Management, Tsinghua University, where I was fortunate to be advised by Prof. Liangjun Su. I received my Ph.D. in Economics from Fudan University in 2024, and my M.A. and B.A. in Economics from Lingnan College, Sun Yat-sen University in 2020 and 2018, respectively.",
+            hero_p3: "Before joining WISE, I was a postdoctoral researcher at the School of Economics and Management, Tsinghua University. I received my Ph.D. in Economics from Fudan University in 2024, and my M.A. and B.A. in Economics from Lingnan College, Sun Yat-sen University in 2020 and 2018, respectively.",
             research_title: "Research",
             research_pub: "Publications",
             research_wp: "Working Papers",
@@ -76,7 +77,8 @@
             addr_line3: "Xiamen, Fujian 361005, China"
           },
           zh: {
-            hero_title: "欢迎来访！我是高尚。",
+            hero_title_accent: "欢迎",
+            hero_title_rest: "来访！我是高尚。",
             hero_p1: "我现任厦门大学王亚南经济研究院（WISE）助理教授。",
             hero_p2: "我的研究方向是理论计量经济学，主要关注高维因子模型和结构变动检验，及其在宏观经济学和金融学中的应用。",
             hero_p3: "加入WISE之前，我曾在清华大学经济管理学院从事博士后研究。2024年，我在复旦大学获经济学博士学位，2020年和2018年，我在中山大学岭南学院分别获经济学硕士和学士学位。",
@@ -122,15 +124,9 @@
         }
 
         $(function(){
-            $("#header").load("header.html", function() {
-                // Highlight the current section in the nav if needed, or just default to about
-                // $(".header-link[href='#about']").addClass("w--current"); 
-                initLang();
-            });
-            $("#footer").load("footer.html");
+            initLang();
 
             // Custom Smooth Scroll with Easing
-            // We delegate the click event to the document because the header is loaded dynamically.
             $(document).on('click', 'a[href^="#"]', function(e) {
                 const targetId = $(this).attr('href');
                 // Skip if it's just '#' (like the language toggle)
@@ -178,7 +174,15 @@
     </script>
 </head>
 <body>
-    <div id="header"></div>
+    <div id="header">
+        <nav class="navigation">
+            <div class="header-link-group">
+                <a href="#about" class="header-link"><span class="full-name">高尚 Shang Gao</span></a>
+                <a href="#research" class="header-link"><span data-i18n="nav_research">Research</span></a>
+                <a href="#" id="lang-toggle" class="header-link lang-link" aria-label="Switch language">中文</a>
+            </div>
+        </nav>
+    </div>
 
     <div class="standard-container" id="about">
         <div class="content-wrapper">
@@ -186,7 +190,7 @@
             <div class="bio-statement-and-portrait">
                 
                 <div class="personal-statement">
-                    <h2 class="section-heading-title" data-i18n="hero_title">Hi! I'm Shang Gao.</h2>
+                    <h2 class="section-heading-title"><span class="hero-title-accent" data-i18n="hero_title_accent">Hi!</span><span data-i18n="hero_title_rest"> I'm Shang Gao.</span></h2>
                     <p data-i18n="hero_p1">I am an assistant professor at the Wang Yanan Institute for Studies in Economics (WISE), Xiamen University.</p>
                     <p data-i18n="hero_p2">My research focuses on theoretical econometrics, high-dimensional factor models, and machine learning, with applications in macroeconomics and finance.</p>
                     <p data-i18n="hero_p3">Before joining WISE, I was a postdoctoral researcher at the School of Economics and Management, Tsinghua University. I received my Ph.D. in Economics from Fudan University in 2024, and my M.A. and B.A. in Economics from Lingnan College, Sun Yat-sen University in 2020 and 2018, respectively.</p>
@@ -213,41 +217,46 @@
             <div class="research-item">
                 <h3 class="research-title"><a href="https://doi.org/10.1017/S0266466622000494" class="research-link-title" target="_blank">Testing for strict stationarity via the discrete Fourier transform</a></h3>
                 <div class="research-authors">with <a href="https://zhonghaofu.com/" class="author-link">Zhonghao Fu</a>, <a href="https://www.sem.tsinghua.edu.cn/info/1206/32089.htm" class="author-link">Liangjun Su</a>, and <a href="https://econ.ruc.edu.cn/jszy/c2d1516949be47c0b0c4955aa52a4432.htm" class="author-link">Xia Wang</a></div>
-                <div class="research-status">Econometric Theory, 2024, 40, 511–557.</div>
+                <div class="research-status"><span class="journal-name">Econometric Theory</span>, <span class="publication-details">2024, 40, 511–557.</span></div>
             </div>
 
             <div class="research-item">
                 <h3 class="research-title"><a href="https://doi.org/10.1016/j.jeconom.2026.106203" class="research-link-title" target="_blank">High-dimensional conditional factor model</a></h3>
                 <div class="research-authors">with <a href="https://zhonghaofu.com/" class="author-link">Zhonghao Fu</a>, <a href="https://www.sem.tsinghua.edu.cn/info/1206/32089.htm" class="author-link">Liangjun Su</a>, and <a href="https://econ.ruc.edu.cn/jszy/c2d1516949be47c0b0c4955aa52a4432.htm" class="author-link">Xia Wang</a></div>
-                <div class="research-status">Journal of Econometrics, 2026, 254 (Part B): 106203.</div>
+                <div class="research-status"><span class="journal-name">Journal of Econometrics</span>, <span class="publication-details">2026, 254 (Part B): 106203.</span></div>
             </div>
             <h3 class="research-subsection-title" data-i18n="research_wp">Working Papers</h3>
 
             <div class="research-item">
-                <h3 class="research-title">On state-varying FAVAR models: estimation, inference and testing</h3>
-                <div class="research-authors">with Zhonghao Fu, Liangjun Su, and Xia Wang</div>
-                <div class="research-status">Working Paper</div>
+              <h3 class="research-title">On state-varying FAVAR models: estimation, inference and testing</h3>
+              <div class="research-authors">with Zhonghao Fu, Liangjun Su, and Xia Wang</div>
             </div>
 
             <!-- <div class="research-item">
-                <h3 class="research-title">Inference in high-dimensional single-index conditional factor models</h3>
-                <div class="research-authors">with Liangjun Su</div>
-                <div class="research-status">Working Paper</div>
+              <h3 class="research-title">Inference in high-dimensional single-index conditional factor models</h3>
+              <div class="research-authors">with Liangjun Su</div>
+              <div class="research-status">Working Paper</div>
                 
             </div> -->
 
             <div class="research-item">
-                <h3 class="research-title">Detecting multiple distributional structural breaks via empirical characteristic functions and shrinkage estimation</h3>
-                <div class="research-authors">with Zhonghao Fu, Liangjun Su, and Xia Wang</div>
-                <div class="research-status">Working Paper</div>
-                
+              <h3 class="research-title">Detecting multiple distributional structural breaks via empirical characteristic functions and shrinkage estimation</h3>
+              <div class="research-authors">with Zhonghao Fu, Liangjun Su, and Xia Wang</div>
             </div>
+
         </div>
 
 
 
     </div>
 
-    <div id="footer"></div>
+    <div id="footer">
+      <footer class="footer-wrap">
+        <div class="footer-links">
+          <a href="#about" class="footer-item">About</a>
+          <a class="footer-item">© 2026 Shang Gao</a>
+        </div>
+      </footer>
+    </div>
 </body>
 </html>
